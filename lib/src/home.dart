@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/src/game.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,7 +19,13 @@ class Home extends StatelessWidget {
             Image(image: AssetImage('images/welcome.png')),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => Game(),
+                  ),
+                );
+              },
               child: Text(
                 'START GAME',
                 style: TextStyle(fontSize: 20),
