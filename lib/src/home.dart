@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                 );
               },
               child: Text(
-                'START GAME',
+                'START',
                 style: TextStyle(fontSize: 20),
               ),
               style: ElevatedButton.styleFrom(
