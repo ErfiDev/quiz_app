@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/src/question.dart';
+import 'package:quiz_app/src/questions.dart';
 
 class Game extends StatefulWidget {
   const Game({Key? key}) : super(key: key);
@@ -91,7 +91,8 @@ class _GameState extends State<Game> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                        "Please select difficulty and number of questions"),
+                      "Please containe all the fields before starting the game",
+                    ),
                   ),
                 );
                 return;

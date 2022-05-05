@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/src/game.dart';
+import 'package:quiz_app/src/game_settings.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,10 +14,17 @@ class Home extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(image: AssetImage('images/welcome.png')),
-            SizedBox(height: 20),
+            SizedBox(width: double.infinity),
+            Expanded(
+              flex: 3,
+              child: Image(
+                image: AssetImage('images/welcome.png'),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
@@ -35,7 +42,8 @@ class Home extends StatelessWidget {
                 padding: EdgeInsets.all(16),
                 elevation: 5,
               ),
-            )
+            ),
+            SizedBox(height: 50),
           ],
         ),
       ),
