@@ -3,18 +3,22 @@ class Question {
   String correctAnswer;
   List<dynamic> answers;
 
-  Question(
-    this.question,
-    this.correctAnswer,
-    this.answers,
-  );
+  Question({
+    required this.question,
+    required this.correctAnswer,
+    required this.answers,
+  });
 
-// take argument as a map of string dynamic
   factory Question.FromJson(Map<String, dynamic> json) {
+    List<dynamic> allAnswers = [];
+    allAnswers.add(json['correct_answer']);
+    allAnswers.addAll(json['incorrect_answers']);
+    allAnswers.shuffle();
+
     return Question(
-      json['question'],
-      json['correct_answer'],
-      json['incorrect_answers'],
+      question: json['question'],
+      correctAnswer: json['correct_answer'],
+      answers: allAnswers,
     );
   }
 
